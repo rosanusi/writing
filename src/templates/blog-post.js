@@ -9,7 +9,10 @@ function BlogPost(props) {
     const post = props.data.markdownRemark;
     const url = props.data.site.siteMetadata.siteUrl
     const { title, description } = post.frontmatter;
-    const thumbnail = post.frontmatter.image.childImageSharp.resize.src
+    let thumbnail; 
+    if(post.frontmatter.image){
+      thumbnail = post.frontmatter.image.childImageSharp.resize.src
+    }
     return (
         <Layout>
             <Metatags
@@ -21,7 +24,9 @@ function BlogPost(props) {
             />
             <div>
                 <h1>{title}</h1>
-                <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+                { post.frontmatter.image &&
+                  <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+                }
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
         </Layout>
