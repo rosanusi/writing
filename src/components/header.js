@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+
 const Header = ({ siteTitle }) => (
-  <div>
-    <div>
-      <h1> Ridwan's writings - Thoughts &amp; junks.</h1>
-    </div>
-  </div>
+            
+  <Link to="/" className="header">
+    <h1>Loosely held random thoughts</h1>
+  </Link>
 )
 
 export default Header

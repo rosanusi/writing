@@ -22,12 +22,14 @@ function BlogPost(props) {
                 url={url}
                 pathname={props.location.pathname}
             />
-            <div>
-                <h1>{title}</h1>
-                { post.frontmatter.image &&
-                  <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
-                }
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="post-details-container">
+                <h1 class="title">{title}</h1>
+                <div className="mainContent">
+                  { post.frontmatter.image &&
+                    <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+                  }
+                  <div className="textContent" dangerouslySetInnerHTML={{ __html: post.html }} />
+                </div>
             </div>
         </Layout>
     )

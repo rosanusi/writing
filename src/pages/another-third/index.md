@@ -1,6 +1,6 @@
 ---
 title: My third Blog post
-description : Nooooooooooooooope
+description : Nope
 date: '2018-09-26'
 image: time.jpg
 ---
