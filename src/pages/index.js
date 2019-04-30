@@ -16,15 +16,7 @@ const IndexPage = (props) => {
             <div className="card rdwn-blog-post">
               <span className="date">{node.frontmatter.date}</span>
               <Link to={node.fields.slug} className="link" >
-                {node.frontmatter.tag === 'design' &&
-                  <h1 className="title design">{node.frontmatter.title}</h1>
-                }
-                {node.frontmatter.tag === 'thought' &&
-                  <h1 className="title thought">{node.frontmatter.title}</h1>
-                }
-                {node.frontmatter.tag === 'junk' &&
-                  <h1 className="title junk">{node.frontmatter.title}</h1>
-                }
+                <h1 className="title">{node.frontmatter.title}</h1>
               </Link>                      
               <p>{node.excerpt}</p>
             </div>
